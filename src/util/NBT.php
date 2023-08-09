@@ -10,15 +10,12 @@ use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\Tag;
-use function array_keys;
 use function array_map;
-use function count;
 use function is_array;
 use function is_bool;
 use function is_float;
 use function is_int;
 use function is_string;
-use function range;
 
 class NBT {
 
@@ -41,7 +38,7 @@ class NBT {
 	 * Creates a Tag that is either a ListTag or CompoundTag based on the data types of the keys in the provided array.
 	 */
 	private static function getArrayTag(array $array): Tag {
-		if(array_keys($array) === range(0, count($array) - 1)) {
+		if(array_is_list($array)) {
 			return new ListTag(array_map(fn($value) => self::getTagType($value), $array));
 		}
 		$tag = CompoundTag::create();
