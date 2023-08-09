@@ -10,6 +10,7 @@ use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\Tag;
+use function array_is_list;
 use function array_map;
 use function is_array;
 use function is_bool;
